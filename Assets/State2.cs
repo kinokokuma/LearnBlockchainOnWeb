@@ -11,13 +11,13 @@ public class State2 : MonoBehaviour
 {
     int[] data = { 254, 43, 21 };
     string hashencode;
-
+    public state2Contorl contorl;
     public blocktext inputField;
     public Text hashtxt, noncetxt;
     public int index = 0;
     
     public int hash = 14, nonce = 0, oldhash = 14;
-    string blocktext;
+    public string blocktext;
     Text showText;
     void Start()
     {
@@ -34,6 +34,7 @@ public class State2 : MonoBehaviour
     {
         Debug.Log("index    " + index);
         password();
+        point();
     }
 
     public void chtxt(string x)
@@ -50,6 +51,7 @@ public class State2 : MonoBehaviour
         noncetxt.text = data[index].ToString();
          hashencode = getHashSha256(hash.ToString());
         hashtxt.text = hashencode.Substring(0, 4);
+        
     }
     public string getHashSha256(string text)
     {
@@ -61,13 +63,29 @@ public class State2 : MonoBehaviour
         {
             hashString += String.Format("{0:x2}", x);
         }
+
         return hashString;
     }
     void point()
     {
        if(hashencode.Substring(0, 1) == "1")
         {
-            index++;
+            if (!contorl.character.active&& contorl.count<=7)
+                contorl.count++;
+            if (contorl.count==4|| contorl.count == 8)
+            {
+                contorl.character.SetActive(true);
+            }
+            else
+            {
+                index++;
+                if(index>2)
+                {
+                    index = 2;
+                }
+            }
+           
+
         }
     }
 }

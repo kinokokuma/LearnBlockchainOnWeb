@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class state1Contorl : MonoBehaviour
 {
     // Start is called before the first frame update
-    string[] text = { "test1", "test2", "test3","step2","step21", "step3", "step3.1" };
+    string[] text = { "สวัสดีครับ ผมชื่อแซม ", "วันนี้ผมจะมาแนะนำให้คุณรู้จักวิธีการเก็บข้อมูลแบบ blockchain", "ในขั้นแรกผมจะให้คุณลองใส่ข้อมูลลงในblock โดยกรอกตัวเลขอะไรก็ได้ลงในกล่องข้อความแล้วกด enter","นั่นไง! ข้อมูลที่คุณใส่ถูกบันทึกลงไปแล้ว และจะถูกเข้ารหัสเรียกว่า hash","ลองใส่ข้อมูลอีก 3 ครั้ง แล้วสังเกตการเปลี่ยนแปลงสิ", "step3", "step3.1" };
     public GameObject character;
     public Text readText;
     public int countInput = 0;

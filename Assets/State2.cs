@@ -39,18 +39,24 @@ public class State2 : MonoBehaviour
 
     public void chtxt(string x)
     {
-        blocktext = x;
+        if (x != "" && x != null)
+        {
+            blocktext = x;
 
-       
-        showText.text = blocktext;
 
+            showText.text = blocktext;
+        }
     }
     void password()
     {
+        if (blocktext != "" && blocktext != null)
+        {
+           
             hash = data[index] + int.Parse(blocktext);
-        noncetxt.text = data[index].ToString();
-         hashencode = getHashSha256(hash.ToString());
-        hashtxt.text = hashencode.Substring(0, 4);
+            noncetxt.text = data[index].ToString();
+            hashencode = getHashSha256(hash.ToString());
+            hashtxt.text = hashencode.Substring(0, 4);
+        }
         
     }
     public string getHashSha256(string text)

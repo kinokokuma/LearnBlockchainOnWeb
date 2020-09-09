@@ -48,42 +48,55 @@ public class getText : MonoBehaviour
     void password()
     {
         showText.text = blocktext;
-        int num = 0;
-        if (blockIndex != 0)
+        if (blocktext != "" && blocktext != null)
         {
-            Debug.Log("oldBlock.hash :" + oldBlock.hash);
-            if(!inputnonce)
+            int num = 0;
+            if (blockIndex != 0)
             {
-                nonce = 5 - (int.Parse(blocktext) % 5);
-                noncetxt.text = nonce.ToString();
+                Debug.Log("oldBlock.hash :" + oldBlock.hash);
+                if (!inputnonce)
+                {
+                    int testNonce = 1;
+                    while (getHashSha256((int.Parse(oldBlock.hash, System.Globalization.NumberStyles.HexNumber) + int.Parse(blocktext)+testNonce).ToString()).Substring(0, 1) != "1")
+                    {
+                        testNonce++;
+                    }
+                    nonce = testNonce;
+                    noncetxt.text = nonce.ToString();
+                }
+                else
+                {
+                    //noncetxt.text =
+                }
+
+                num = int.Parse(oldBlock.hash, System.Globalization.NumberStyles.HexNumber) + int.Parse(blocktext) + nonce;
+                Debug.Log("hash :" + num.ToString());
+                Debug.Log("00000");
             }
             else
             {
-                //noncetxt.text =
+                if (!inputnonce)
+                { int testNonce=1;
+                    while(getHashSha256((oldhash + int.Parse(blocktext) + testNonce).ToString()).Substring(0,1)!="1")
+                    {
+                        testNonce+=1;
+                    }
+                    nonce = testNonce;
+                    noncetxt.text = nonce.ToString();
+                }
+                
+                num = oldhash + int.Parse(blocktext) + nonce;
+
             }
-            
-            num = int.Parse(oldBlock.hash, System.Globalization.NumberStyles.HexNumber) + int.Parse(blocktext) * nonce;
-            Debug.Log("hash :"+num.ToString());
-            Debug.Log("00000");
-        }
-        else
-        {
-            if (!inputnonce)
+
+
+            string hashencode = getHashSha256(num.ToString());
+            hash = hashencode.Substring(0, 4);
+            hashtxt.text = hash;
+            if (oldhashtxt != null)
             {
-                nonce = int.Parse(blocktext) % 5;
-                noncetxt.text = nonce.ToString();
+                oldhashtxt.text = oldBlock.hash;
             }
-            num = oldhash + int.Parse(blocktext) * nonce;
-            
-        }
-        
-        
-        string hashencode = getHashSha256(num.ToString());
-        hash= hashencode.Substring(0, 4);
-        hashtxt.text = hash;
-        if(oldhashtxt!=null)
-        {
-            oldhashtxt.text = oldBlock.hash;
         }
     }
     public  string getHashSha256(string text)

@@ -9,6 +9,7 @@ public class button : MonoBehaviour
     int index = 0;
     public GameObject block,origin;
     public InputField input;
+    public GameObject[] blockstate2;
    public void addData()
     {
         if (input.text != "")
@@ -23,4 +24,5 @@ public class button : MonoBehaviour
             index++;
         }
     }
+   
 }

@@ -97,4 +97,5 @@ public class State4Contorl : MonoBehaviour
         yield return new WaitForSeconds(1);
         click = false;
     }
+
 }

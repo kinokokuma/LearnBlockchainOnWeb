@@ -9,22 +9,23 @@ using System.Text;
 
 public class State2 : MonoBehaviour
 {
-    int[] data = { 254, 43, 21 };
-    string hashencode;
+
+    public string hashencode;
     public state2Contorl contorl;
     public blocktext inputField;
-    public Text hashtxt, noncetxt;
+    public Text hashtxt, datatxt;
     public int index = 0;
-    
+    public int data;
     public int hash = 14, nonce = 0, oldhash = 14;
     public string blocktext;
+    
     Text showText;
     void Start()
     {
-      
+        
 
-        showText = GetComponent<Text>();
-        noncetxt.text = data[index].ToString();
+          showText = GetComponent<Text>();
+        
         hashencode = getHashSha256(hash.ToString());
         hashtxt.text = hashencode.Substring(0, 4);
     }
@@ -32,9 +33,14 @@ public class State2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(data);
+        if(data!=0)
+        {
+            datatxt.text = data.ToString();
+        }
         Debug.Log("index    " + index);
         password();
-        point();
+    
     }
 
     public void chtxt(string x)
@@ -52,8 +58,8 @@ public class State2 : MonoBehaviour
         if (blocktext != "" && blocktext != null)
         {
            
-            hash = data[index] + int.Parse(blocktext);
-            noncetxt.text = data[index].ToString();
+            hash = data + int.Parse(blocktext);
+            datatxt.text = data.ToString();
             hashencode = getHashSha256(hash.ToString());
             hashtxt.text = hashencode.Substring(0, 4);
         }
@@ -72,26 +78,6 @@ public class State2 : MonoBehaviour
 
         return hashString;
     }
-    void point()
-    {
-       if(hashencode.Substring(0, 1) == "1")
-        {
-            if (!contorl.character.active&& contorl.count<=7)
-                contorl.count++;
-            if (contorl.count==4|| contorl.count == 8)
-            {
-                contorl.character.SetActive(true);
-            }
-            else
-            {
-                index++;
-                if(index>2)
-                {
-                    index = 2;
-                }
-            }
-           
-
-        }
-    }
+   
+   
 }

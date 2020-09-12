@@ -411,7 +411,7 @@ PrefabInstance:
         type: 3}
       propertyPath: oldhashtxt
       value: 
-      objectReference: {fileID: 1791978679}
+      objectReference: {fileID: 0}
     - target: {fileID: 3665997361122665040, guid: ade079d01fcc6b746a0bd3e63cf9e7cf,
         type: 3}
       propertyPath: blockName
@@ -2252,7 +2252,7 @@ PrefabInstance:
         type: 3}
       propertyPath: oldhashtxt
       value: 
-      objectReference: {fileID: 2022409968}
+      objectReference: {fileID: 0}
     - target: {fileID: 3665997361122665040, guid: ade079d01fcc6b746a0bd3e63cf9e7cf,
         type: 3}
       propertyPath: blockName
@@ -3705,6 +3705,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: {fileID: 4687548957036576164, guid: ade079d01fcc6b746a0bd3e63cf9e7cf, type: 3}
   origin: {fileID: 1307650585}
+  input: {fileID: 0}
+  blockstate2: []
 --- !u!1 &1231234791
 GameObject:
   m_ObjectHideFlags: 0
@@ -4915,7 +4917,7 @@ PrefabInstance:
         type: 3}
       propertyPath: oldhashtxt
       value: 
-      objectReference: {fileID: 1356173001}
+      objectReference: {fileID: 0}
     - target: {fileID: 4687548957036576164, guid: ade079d01fcc6b746a0bd3e63cf9e7cf,
         type: 3}
       propertyPath: m_Name

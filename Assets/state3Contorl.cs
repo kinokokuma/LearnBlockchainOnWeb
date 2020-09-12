@@ -8,7 +8,11 @@ public class state3Contorl : MonoBehaviour
 {
     public block[] block;
         public getText[] data,nonce;
-    string[] text = { "test1", "test2", "test3", "step2", "step21", "step3", "step3.1", "8", "9", "10", "11" };
+    string[] text = { "ครั้งนี้ผมจะยังไม่เฉลยแล้วกันแต่จะให้คุณลองเปลี่ยนข้อมูลใน Block ตรงกลาง", "ให้ทำการคลิ๊กที่ Block แล้วกรอกตัวเลขได้เลย"
+            ,"เพื่อให้ง่ายผมจะช่วยคำนวน Hash ให้แล้วกัน", "อย่าลิมสังเกตความเปลี่ยนแปลงหลังกรอกตัวเลขด้วยนะ"
+            , "เห็นมั้ยว่าพอ Hash ของ Block ที่ 2 เปลี่ยน ก็ทำให้ hash ของ Blockถัดมาเปลี่ยนด้วย", "เพราะว่าการคำนวน hash จะนำ Hash ของ Block ก่อนหน้ามาคำนวนด้วย"
+            , "เราถึงเรียกว่า Blockchain ยังไงละ", "ถ้ายังไม่เข้าใจก็ลองเปลี่ยนข้อมูลอีก 3 รอบดูแล้วกัน"
+            , "เก่งมาก ทีนี้ก็เข้าใจแล้วสินะว่าทำไมเราถึงเรียกว่า Blockchain", "ต่อไปจะเป็นบทเรียนสุดท้ายแล้ว ผมจะแสดงให้เห็นว่า ทำไม Blockchain ถึงปลอดภัยกว่าการเก็บข้อมูลแบบเก่า" };
     public GameObject character;
     public Text readText;
     public int count = 0;
@@ -54,25 +58,25 @@ public class state3Contorl : MonoBehaviour
                 StartCoroutine(resetClick());
             }
         }
-        if (count == 3)
+        if (count == 4)
         {
             character.SetActive(false);
         }
 
-        if (count == 5)
+        if (count == 8)
         {
             character.SetActive(false);
         }
-        if (count == 6)
+        if (count == 10)
         {
             SceneManager.LoadScene(3);
         }
-        if (countInput == 1 && count == 3)
+        if (countInput == 1 && count == 4)
         {
             character.SetActive(true);
 
         }
-        if (countInput == 4 && count == 5)
+        if (countInput == 4 && count == 8)
         {
             character.SetActive(true);
         }

@@ -35,7 +35,7 @@ public class blocktext : MonoBehaviour
                
             }
 
-            Debug.Log("xxxxxxx");
+           
         }
     }
 

@@ -20,7 +20,7 @@ public class button : MonoBehaviour
             getText blockData = GameObject.Find("blockdata" + index + "/blockData/data").GetComponent<getText>();
             blockData.blockIndex = index;
             blockData.blocktext = input.text;
-
+            input.text = "";
             index++;
         }
     }

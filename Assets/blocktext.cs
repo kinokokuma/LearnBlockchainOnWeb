@@ -10,6 +10,8 @@ public class blocktext : MonoBehaviour
     public getText get;
     public bool active =false;
     public InputField inputBox;
+    public button button;
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -23,16 +25,26 @@ public class blocktext : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            returnText();
+            if (button == null)
+            {
+                returnText();
+            }
+            else
+            {
+                button.addData();
+               
+            }
 
             Debug.Log("xxxxxxx");
         }
     }
+
     public void returnText()
     {
         string txt = inputBox.text;
         if (txt != "")
         {
+
             get.chtxt(txt);
             inputBox.text = "";
 

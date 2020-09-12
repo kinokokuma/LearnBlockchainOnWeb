@@ -631,6 +631,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: {fileID: 4687548957036576164, guid: ade079d01fcc6b746a0bd3e63cf9e7cf, type: 3}
   origin: {fileID: 0}
+  input: {fileID: 0}
+  blockstate2: []
 --- !u!114 &3911362276633158560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -746,6 +748,8 @@ MonoBehaviour:
   get: {fileID: 335463648006132333}
   active: 1
   inputBox: {fileID: 247443032737727070}
+  button: {fileID: 0}
+  contorl: {fileID: 0}
 --- !u!114 &6067949433242751148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -926,8 +930,8 @@ GameObject:
   - component: {fileID: 3911362276323235871}
   - component: {fileID: 4022178122158903533}
   m_Layer: 0
-  m_Name: block (1)
-  m_TagString: Untagged
+  m_Name: blockState1
+  m_TagString: blockS1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1052,6 +1056,8 @@ MonoBehaviour:
   get: {fileID: 0}
   active: 0
   inputBox: {fileID: 0}
+  button: {fileID: 0}
+  contorl: {fileID: 0}
 --- !u!1 &8810510299369383225
 GameObject:
   m_ObjectHideFlags: 0

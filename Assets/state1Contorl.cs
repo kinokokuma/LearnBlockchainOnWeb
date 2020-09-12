@@ -23,7 +23,7 @@ public class state1Contorl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        countInput = GameObject.FindGameObjectsWithTag("blockS1").Length;
         if (Input.GetMouseButtonDown(0) && !click)
         {
 

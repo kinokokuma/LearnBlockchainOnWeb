@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 public class state1Contorl : MonoBehaviour
 {
     // Start is called before the first frame update
-    string[] text = { "สวัสดีครับ ผมชื่อแซม ", "วันนี้ผมจะมาแนะนำให้คุณรู้จักวิธีการเก็บข้อมูลแบบ blockchain", "ในขั้นแรกผมจะให้คุณลองใส่ข้อมูลลงในblock โดยกรอกตัวเลขอะไรก็ได้ลงในกล่องข้อความแล้วกด enter","นั่นไง! ข้อมูลที่คุณใส่ถูกบันทึกลงไปแล้ว และจะถูกเข้ารหัสเรียกว่า hash","ลองใส่ข้อมูลอีก 3 ครั้ง แล้วสังเกตการเปลี่ยนแปลงสิ", "step3", "step3.1" };
+    string[] text = { "สวัสดีครับ ผมชื่อแซม ", "วันนี้ผมจะมาแนะนำให้คุณรู้จักวิธีการเก็บข้อมูลแบบ Blockchain"
+            , "ในขั้นแรกผมจะให้คุณลองใส่ข้อมูลลงในblock โดยกรอกตัวเลขอะไรก็ได้ลงในกล่องข้อความแล้วกด enter"
+            ,"นั่นไง! ข้อมูลที่คุณใส่ถูกบันทึกลงไปแล้ว และจะถูกเข้ารหัสเรียกว่า hash","โดยทุกครั้งที่เราบันทึกข้อมูล ข้อมูลและการเข้ารหัสจะถูกเก็บไว้รวมกันเรียกว่า 1 Block","ลองใส่ข้อมูลอีก 3 ครั้ง แล้วสังเกตการเปลี่ยนแปลงสิ"
+            , "ดูซิ ข้อมูลที่ใส่แต่ละครั้งไม่เหมือนกันพอเข้ารหัสแล้วก็ไม่เหมือนกัน","แต่การเข้ารหัสจริงๆแล้วยังมีส่วนอื่นๆอีกไปดูกันเลย", "" };
     public GameObject character;
     public Text readText;
     public int countInput = 0;
@@ -46,11 +49,11 @@ public class state1Contorl : MonoBehaviour
             character.SetActive(false);
         }
         
-        if (count == 5)
+        if (count == 6)
         {
             character.SetActive(false);
         }
-        if (count == 6)
+        if (count == 8)
         {
             SceneManager.LoadScene(1);
         }
@@ -60,7 +63,7 @@ public class state1Contorl : MonoBehaviour
             character.SetActive(true);
             
         }
-        if (countInput == 4 && count == 5)
+        if (countInput == 4 && count == 6)
         {
             character.SetActive(true);
         }

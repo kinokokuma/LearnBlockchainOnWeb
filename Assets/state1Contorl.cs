@@ -18,9 +18,14 @@ public class state1Contorl : MonoBehaviour
     public GameObject input, button;
     public int count=0;
     public bool click = false;
+    public AudioClip[] voice;
+    private AudioSource voiceSource;
+
     void Start()
     {
         readText.text = text[count];
+        voiceSource = GetComponent<AudioSource>();
+        StartCoroutine(resetClick());
     }
 
     // Update is called once per frame
@@ -43,7 +48,7 @@ public class state1Contorl : MonoBehaviour
 
 
         }
-        
+       
         if(count==3)
         {
             character.SetActive(false);
@@ -72,13 +77,21 @@ public class state1Contorl : MonoBehaviour
             countInput++;
             olddata = block.blocktext;
         }
+
+        if (voiceSource.clip!=voice[count]&&voice.Length>count&&character.active)
+        {
+            voiceSource.clip = voice[count];
+            voiceSource.Play();
+        }
+
         input.SetActive(!character.active);
         button.SetActive(!character.active);
+        
     }
     IEnumerator resetClick()
     {
         click = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(voice[count].length);
         click = false;
     }
 }

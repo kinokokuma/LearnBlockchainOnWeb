@@ -21,6 +21,9 @@ public class State4Contorl : MonoBehaviour
     public int[] countInput = { 0,0,0};
     public string[] oldData = {"","","" };
     public getText[] blockData;
+    public AudioClip[] voice;
+    private AudioSource voiceSource;
+
     void Start()
     {
         for (int i = 0; i < 3; i++)
@@ -40,6 +43,8 @@ public class State4Contorl : MonoBehaviour
         oldData[1] = blockData[1].blocktext;
         oldData[2] = blockData[2].blocktext;
         readText.text = text[count];
+        voiceSource = GetComponent<AudioSource>();
+        StartCoroutine(resetClick());
     }
 
     // Update is called once per frame
@@ -96,11 +101,16 @@ public class State4Contorl : MonoBehaviour
             data1[1].showText = data1[1].noncetxt;
             data1[1].inputnonce = true;
         }
+        if (voiceSource.clip != voice[count] && voice.Length > count && character.active)
+        {
+            voiceSource.clip = voice[count];
+            voiceSource.Play();
+        }
     }
     IEnumerator resetClick()
     {
         click = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(voice[count].length);
         click = false;
     }
 

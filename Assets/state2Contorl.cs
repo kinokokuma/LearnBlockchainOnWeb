@@ -23,6 +23,9 @@ public class state2Contorl : MonoBehaviour
     public InputField inputBox;
     public GameObject[] blockstate2;
     public int index = 0;
+    public AudioClip[] voice;
+    private AudioSource voiceSource;
+
     void Start()
     {
         readText.text = text[count];
@@ -33,6 +36,8 @@ public class state2Contorl : MonoBehaviour
         blockstate2[1].SetActive(false);
         blockstate2[2].SetActive(false);
         Debug.Log(text.Length);
+        voiceSource = GetComponent<AudioSource>();
+        StartCoroutine(resetClick());
     }
 
     // Update is called once per frame
@@ -78,14 +83,18 @@ public class state2Contorl : MonoBehaviour
             SceneManager.LoadScene(2);
         }
 
-       
+        if (voiceSource.clip != voice[count] && voice.Length > count && character.active)
+        {
+            voiceSource.clip = voice[count];
+            voiceSource.Play();
+        }
         input.SetActive(!character.active);
         button.SetActive(!character.active);
     }
     IEnumerator resetClick()
     {
         click = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(voice[count].length);
         click = false;
     }
     public void addBlock()

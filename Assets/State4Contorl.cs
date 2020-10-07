@@ -65,7 +65,7 @@ public class State4Contorl : MonoBehaviour
         nextButton.SetActive(!click);
         if (count == 15)
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(5);
         }
         if (count<4)
         {

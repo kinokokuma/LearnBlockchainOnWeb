@@ -80,7 +80,7 @@ public class state3Contorl : MonoBehaviour
         }
         if (count == 10)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
         }
         if (countInput == 1 && count == 4)
         {

@@ -84,7 +84,7 @@ public class state2Contorl : MonoBehaviour
         }
         if (count == 18)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
 
         if (voiceSource.clip != voice[count] && voice.Length > count && character.active)

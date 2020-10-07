@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class button : MonoBehaviour
 {
@@ -24,5 +24,10 @@ public class button : MonoBehaviour
             index++;
         }
     }
-   
+
+    public void startButt()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
+

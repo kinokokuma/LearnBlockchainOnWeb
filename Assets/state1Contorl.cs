@@ -23,6 +23,7 @@ public class state1Contorl : MonoBehaviour
     private AudioSource voiceSource;
     public GameObject[] objAnimation;
     public GameObject nextButton;
+    public GameObject blockObj;
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class state1Contorl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        readText.text = text[count];
         nextButton.SetActive(!click);
         countInput = GameObject.FindGameObjectsWithTag("blockS1").Length;
         if (Input.GetMouseButtonDown(0) && !click)
@@ -53,11 +55,12 @@ public class state1Contorl : MonoBehaviour
 
 
         }
-       
+        
         if(count==3)
         {
             header.text = missionText[0];
             character.SetActive(false);
+            blockObj.SetActive(true);
         }
         
         if (count == 6)
@@ -100,6 +103,12 @@ public class state1Contorl : MonoBehaviour
         click = true;
         yield return new WaitForSeconds(voice[count].length);
         click = false;
+        if (count==0)
+        {
+            count++;
+            StartCoroutine(resetClick());
+        }
+       
     }
 
     void playObjAnimation()

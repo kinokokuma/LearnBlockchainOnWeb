@@ -2517,9 +2517,9 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 718217aa45606aa43baa9dfd51f010c9, type: 3}
-    m_FontSize: 50
+    m_FontSize: 60
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 200
     m_Alignment: 4
@@ -3036,21 +3036,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1824021391, guid: 81062663ce1f4c94cbd91461343fce72, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2375191315434605912, guid: 81062663ce1f4c94cbd91461343fce72,
-        type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 718217aa45606aa43baa9dfd51f010c9,
-        type: 3}
-    - target: {fileID: 2375191315434605912, guid: 81062663ce1f4c94cbd91461343fce72,
-        type: 3}
-      propertyPath: m_FontData.m_BestFit
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5155216769346588605, guid: 81062663ce1f4c94cbd91461343fce72,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3110,22 +3095,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: character
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155216769346588607, guid: 81062663ce1f4c94cbd91461343fce72,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8693532801661707776, guid: 81062663ce1f4c94cbd91461343fce72,
-        type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 718217aa45606aa43baa9dfd51f010c9,
-        type: 3}
-    - target: {fileID: 8693532801661707776, guid: 81062663ce1f4c94cbd91461343fce72,
-        type: 3}
-      propertyPath: m_FontData.m_BestFit
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81062663ce1f4c94cbd91461343fce72, type: 3}

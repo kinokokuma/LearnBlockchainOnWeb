@@ -13,6 +13,7 @@ public class animation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(gameObject.active)
         anim.SetBool("active", gameObject.active);
     }
 }

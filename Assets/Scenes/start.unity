@@ -112,7 +112,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &558911294
+--- !u!1 &519798921
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,42 +120,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 558911295}
-  - component: {fileID: 558911297}
-  - component: {fileID: 558911296}
+  - component: {fileID: 519798922}
+  - component: {fileID: 519798925}
+  - component: {fileID: 519798924}
+  - component: {fileID: 519798923}
   m_Layer: 5
-  m_Name: Text
+  m_Name: text (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &558911295
+--- !u!224 &519798922
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558911294}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 519798921}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.624748, y: 3.435, z: 0.68564}
   m_Children: []
-  m_Father: {fileID: 1193232143}
-  m_RootOrder: 0
+  m_Father: {fileID: 1914493723}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2.9}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1250, y: 1336}
+  m_SizeDelta: {x: 561.2, y: 105.3}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &558911296
+--- !u!114 &519798923
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558911294}
+  m_GameObject: {fileID: 519798921}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -168,26 +169,51 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8fdf4dc23c2180c44b515ec226d6a0c1, type: 3}
-    m_FontSize: 19
+    m_Font: {fileID: 12800000, guid: 8c9c111bbc016f04c8e0fd8a2641339a, type: 3}
+    m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 200
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start
---- !u!222 &558911297
+  m_Text: "\u0E01\u0E14\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E40\u0E23\u0E34\u0E48\u0E21\u0E40\u0E25\u0E48\u0E19"
+--- !u!114 &519798924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519798921}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d7f8441e068764a979743923d120d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputnonce: 0
+  inputField: {fileID: 0}
+  hashtxt: {fileID: 0}
+  noncetxt: {fileID: 0}
+  oldhashtxt: {fileID: 0}
+  blockIndex: 0
+  blockName: blockdata
+  oldBlock: {fileID: 0}
+  nonce: 0
+  oldhash: 14
+  hash: 14
+  blocktext: 
+  showText: {fileID: 0}
+--- !u!222 &519798925
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558911294}
+  m_GameObject: {fileID: 519798921}
   m_CullTransparentMesh: 0
 --- !u!1 &616267186
 GameObject:
@@ -526,8 +552,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10.717, y: 17.68305, z: 10.717}
-  m_Children:
-  - {fileID: 558911295}
+  m_Children: []
   m_Father: {fileID: 1914493723}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -548,6 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fefc78d251747644f802a0ec4d129ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chain: 1
   block: {fileID: 0}
   origin: {fileID: 0}
   input: {fileID: 0}
@@ -695,7 +721,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8fdf4dc23c2180c44b515ec226d6a0c1, type: 3}
+    m_Font: {fileID: 12800000, guid: 8c9c111bbc016f04c8e0fd8a2641339a, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 1
@@ -707,7 +733,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Blockchain ?
+  m_Text: "\u0E23\u0E39\u0E49\u0E08\u0E31\u0E01 Blockchain \u0E1C\u0E48\u0E32\u0E19
+    website"
 --- !u!114 &1544078305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,6 +942,7 @@ RectTransform:
   m_Children:
   - {fileID: 1544078303}
   - {fileID: 1193232143}
+  - {fileID: 519798922}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

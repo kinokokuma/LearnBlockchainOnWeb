@@ -25,9 +25,11 @@ public class state2Contorl : MonoBehaviour
     public GameObject[] blockstate2;
     public int index = 0;
     public AudioClip[] voice;
+    public AudioClip error;
     private AudioSource voiceSource;
     public GameObject[] objAnimation;
     public GameObject nextButton;
+    public string oldHash;
     void Start()
     {
         header.text = "";
@@ -41,6 +43,8 @@ public class state2Contorl : MonoBehaviour
         Debug.Log(text.Length);
         voiceSource = GetComponent<AudioSource>();
         StartCoroutine(resetClick());
+        addBlock();
+        
     }
 
     // Update is called once per frame
@@ -104,9 +108,9 @@ public class state2Contorl : MonoBehaviour
     }
     public void addBlock()
     {
-       
 
-            if (block[index].hashencode.Substring(0, 1) == "1")
+        string hash = block[index].hashencode;
+            if (hash.Substring(0, 1) == "1")
             {
 
             if (!character.active && count <= 13)
@@ -127,8 +131,14 @@ public class state2Contorl : MonoBehaviour
                     blockstate2[index].SetActive(true);
                     inputBox.GetComponent<inputtext>().get = block[index];
                 }
-               
-            }
+
+        }
+        else if(oldHash != hash)
+        {
+            oldHash = hash;
+            voiceSource.clip = error;
+            voiceSource.Play();
+        }
         
     }
 

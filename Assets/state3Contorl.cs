@@ -23,6 +23,7 @@ public class state3Contorl : MonoBehaviour
     public string oldData = "0";
     public getText blockData;
     public AudioClip[] voice;
+    
     private AudioSource voiceSource;
     public GameObject nextButton;
     public GameObject[] objAnimation;
@@ -49,11 +50,11 @@ public class state3Contorl : MonoBehaviour
         block[2].enabled = false;
         data[0].blocktext = "23";
         data[2].blocktext = "43";
-        if(Input.GetKeyDown(KeyCode.Q))
+       /* if(Input.GetKeyDown(KeyCode.Q))
         {
             data[1].showText = data[1].noncetxt;
             data[1].inputnonce = true;
-        }
+        }*/
         if (Input.GetMouseButtonDown(0) && !click)
         {
 
@@ -96,6 +97,7 @@ public class state3Contorl : MonoBehaviour
             countInput++;
             oldData = blockData.blocktext;
         }
+        
         if (voiceSource.clip != voice[count] && voice.Length > count && character.active)
         {
             voiceSource.clip = voice[count];

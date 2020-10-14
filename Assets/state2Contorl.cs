@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class state2Contorl : MonoBehaviour
 {
     // Start is called before the first frame update
-    string[] text = { "หลังจากที่เราได้ลองบันทึกข้อมูลแล้ว ต่อมาผมจะแนะนำให้รู้จักกับ Nonce", "Nonce คือ number used once ในการเข้ารหัส hash จะถูกยอมรับก็ต่อเมื่อ รูปแบบของรหัสเป็นไปตามข้อตกลง "
+    string[] text = { "หลังจากที่เราได้ลองบันทึกข้อมูลแล้ว ต่อมาผมจะแนะนำให้รู้จักกับ Nonce", "Nonce คือ number used once ในการเข้ารหัส hash เราจะต้องนำ data และ Nonce ที่อยู่ใน Block มาคำนวณ ด้วย ","โดย hash จะถูกยอมรับก็ต่อเมื่อรูปแบบของรหัสเป็นไปตามข้อตกลง" 
             , "ถ้าอย่างนั้นเรามาตกลงกันก่อนดีกว่า เพื่อให้ง่ายต่อการเรียนรู้เราจะกำหนดว่าเงื่อนไขคือ ตัวแรกของ hash จะต้องเป็นเลข 1 เท่านั้น", "แต่จะทำยังไงให้ตรงเงื่อนไขละในเมื่อข้อมูล คือ สิ่งที่ต้องบันทึก โดยไม่ไปปรับเปลี่ยน"
-            , "เราก็จะไปแก้ที่ Nonce นั่นเอง โดย Nonce ไม่มีวิธีคิด ต้องลองสุ่มดูเท่านั้น แต่ในการฝึกผมใบ้ให้แล้วกันว่า Nonce อยู่ระหว่าง 1-10", " งั้นเรามาลองดูกันเลย", "เก่งมากเลยหาเจอจนได้" ,"","คุณรู้จัก Bitcoin มั้ย? "
-            ,"ในการขุด Bitcoin นั้น ก็เป็นการให้คอมพิวเตอร์ สุ่มหา Nonce แบบนี้เมือนกัน ","ซึ่งถ้าสุ่มถูกก็จะได้ Bitcoin เป็นรางวัล","ถ้าอย่างนั้นลองสุ่ม Nonce ให้ถูกอีก 2 รอบละกัน","ในความเป็นจริงมันไม่ง่ายแบบนี้หรอกนะ","",""
+            , "เราก็จะไปแก้ที่ Nonce นั่นเอง โดย Nonce ไม่มีวิธีคิด ต้องลองสุ่มดูเท่านั้น แต่ในการฝึกผมใบ้ให้แล้วกันว่า Nonce อยู่ระหว่าง 1-10", " งั้นเรามาลองดูกันเลย", "เก่งมากเลยหาเจอจนได้" ,"","ในการจะเก็บข้อมูลใน blockchain นั้น ใน 1 block อาจจะไม่ได้มีแค่ data ของเราคุณรู้จัก Bitcoin มั้ย? "
+            ,"โดยเราสามารถจ่ายเงินเพื่อให้คนอื่นสุ่มหา nonce ให้ ","ซึ่งเราเรียกคนที่มาสุ่มหา nonce ว่านักขุด cryptocurrency","ถ้าอย่างนั้นลองสุ่ม Nonce ให้ถูกอีก 2 รอบละกัน","ในความเป็นจริงมันไม่ง่ายแบบนี้หรอกนะ","",""
             ,"ตอนนี้ก็พอเข้าใจการทำงานของ block แต่ละ block แล้วใช่มั้ย","แล้วสงสัยมั้ยว่า chain ของ block chain คืออะไร?","เรามาดูกันดีกว่า",""};
+    // moc data : ในการจะเก็บข้อมูลใน blockchain นั้น ใน 1 block อาจจะไม่ได้มีแค่ data ของเรา , โดยเราสามารถจ่ายเงินเพื่อให้คนอื่นสุ่มหา nonce ให้, ซึ่งเราเรียกคนที่มาสุ่มหา nonce ว่านักขุด cryptocurrency
     string[] missionText = { "ลองใส่ Nonce ที่ทำให้ Hash ตัวแรกเป็นเลข 1 (Nonce อยู่ระหว่าง 1-10)", "ลองสุ่ม Nonce อีก 2 ครั้ง" };
     public GameObject character;
     public Text readText, header;
@@ -71,7 +72,7 @@ public class state2Contorl : MonoBehaviour
 
         }
 
-        if (count == 6)
+        if (count == 7)
         {
             header.text = missionText[0];
             character.SetActive(false);
@@ -79,14 +80,14 @@ public class state2Contorl : MonoBehaviour
             inputBox.GetComponent<inputtext>().get = block[index];
         }
 
-        if (count == 12)
+        if (count == 13)
         {
             header.text = missionText[1];
             character.SetActive(false);
             blockstate2[index].SetActive(true);
             inputBox.GetComponent<inputtext>().get = block[index];
         }
-        if (count == 18)
+        if (count == 19)
         {
             SceneManager.LoadScene(3);
         }
@@ -131,6 +132,7 @@ public class state2Contorl : MonoBehaviour
                     blockstate2[index].SetActive(true);
                     inputBox.GetComponent<inputtext>().get = block[index];
                 }
+            oldHash = hash;
 
         }
         else if(oldHash != hash)
@@ -145,7 +147,7 @@ public class state2Contorl : MonoBehaviour
     void playObjAnimation()
     {
         
-        if (count == 2 && character.active)
+        if ((count == 2|| count == 3) && character.active)
         {
             objAnimation[0].active = true;
         }
@@ -153,7 +155,7 @@ public class state2Contorl : MonoBehaviour
         {
             objAnimation[0].active = false;
         }
-        if (count == 4 && character.active)
+        if (count == 5 && character.active)
         {
             objAnimation[1].active = true;
         }

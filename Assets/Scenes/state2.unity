@@ -1639,20 +1639,20 @@ MonoBehaviour:
   voice:
   - {fileID: 8300000, guid: 11abc23e5c76f774fb168b07ba584692, type: 3}
   - {fileID: 8300000, guid: e53095c61495e3548ab353944ec8028c, type: 3}
-  - {fileID: 8300000, guid: e5d44dfbe2ba96145aabb580761d9409, type: 3}
+  - {fileID: 8300000, guid: 3e6c44f83b2366a42905c9154cbbc6e3, type: 3}
   - {fileID: 8300000, guid: d18421c85d353934189e8265bfe45ec5, type: 3}
   - {fileID: 8300000, guid: 28bea1f72f5f9d84ea52cd0156af1119, type: 3}
-  - {fileID: 8300000, guid: 986bfcbb9f362184e8c7f33ae4293e58, type: 3}
+  - {fileID: 8300000, guid: 3c31f8b16429b95409639ca1d9703728, type: 3}
   - {fileID: 8300000, guid: 9585d26472de77d4ab7c4a5c63ee920e, type: 3}
   - {fileID: 8300000, guid: e5d44dfbe2ba96145aabb580761d9409, type: 3}
-  - {fileID: 8300000, guid: ad3042e0bc5ca9444a313a1471825568, type: 3}
-  - {fileID: 8300000, guid: 69f2cf4081d2f0c4e9b70507182ad6b7, type: 3}
-  - {fileID: 8300000, guid: 178a86a9e83865943b4686860060e528, type: 3}
-  - {fileID: 8300000, guid: e1b6c727295a8684aa7386911d3a9ca7, type: 3}
+  - {fileID: 8300000, guid: 885b2a2622af9af46b63369fdd21571e, type: 3}
+  - {fileID: 8300000, guid: 2382a2d79cec4b54b95b6f5809b529a4, type: 3}
+  - {fileID: 8300000, guid: 1c61e8703b6d52b44b8f461163234170, type: 3}
+  - {fileID: 8300000, guid: 6e9f5201c8df3574ab830a10fad9e589, type: 3}
   - {fileID: 8300000, guid: 525930482dc04e0439a652a761e9fd7b, type: 3}
+  - {fileID: 8300000, guid: e5d44dfbe2ba96145aabb580761d9409, type: 3}
+  - {fileID: 8300000, guid: e5d44dfbe2ba96145aabb580761d9409, type: 3}
   - {fileID: 8300000, guid: 4cc88a0ae1a513c488dc207457e2bb41, type: 3}
-  - {fileID: 8300000, guid: e5d44dfbe2ba96145aabb580761d9409, type: 3}
-  - {fileID: 8300000, guid: e5d44dfbe2ba96145aabb580761d9409, type: 3}
   - {fileID: 8300000, guid: 7168898108151d54cb2d7fd3fd52186d, type: 3}
   - {fileID: 8300000, guid: 76a98482d18218143a695c4d2650c97c, type: 3}
   - {fileID: 8300000, guid: 0d845e036c1bb794fb4d3cdae5c40994, type: 3}
@@ -1663,6 +1663,8 @@ MonoBehaviour:
   - {fileID: 46365970}
   nextButton: {fileID: 1296545672}
   oldHash: 
+  hash: 
+  oldIndex: 0
 --- !u!82 &519420034
 AudioSource:
   m_ObjectHideFlags: 0
